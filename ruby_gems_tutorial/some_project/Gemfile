@@ -1,0 +1,27 @@
+# A Gemfile is a ruby file that uses bundler syntax to declare what
+# gems are needed for a project.
+
+# when you run 'bundle install', bundler looks for Gemfile and then
+# starts installing gems
+
+
+# most common place to host gems is rubygems.org
+source 'http://rubygems.org'
+
+gem "maruku"
+# for this gem the install name is different from require name
+gem "aws-s3", :require => "aws/s3"
+
+
+
+####### Can also use bundler to require gems #####
+=begin
+  For instance,
+
+  require 'bundler/setup'
+  Bundler.require(:default)
+
+  is equivalent to requiring all the gems listed, e.g.
+  require 'maruku'
+  require 'aws/s3'
+=end
